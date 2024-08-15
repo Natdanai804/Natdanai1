@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    
+    int i = 0 , j = 0 , input_number ;
+    printf("please enter number : ") ;
+    scanf("%d" , &input_number ) ;
+    for( i = 0 ; i < input_number ; i++ ) {
+        for( j = 0 ; j < input_number ; j++ ) {
+            if(input_number %2 == 0 )
+            if (j == i) {
+                printf("1") ;
+            } else {
+                printf("0") ;
+            }
+            if(input_number %2 == 1 )
+            if (j == input_number - 1 - i ) {
+                printf("1") ;
+            } else { 
+                printf("0") ;
+            }
+        } //end for
+        printf("\n") ;
+    }
+
+    return 0;
+}
