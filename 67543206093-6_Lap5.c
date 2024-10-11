@@ -34,7 +34,7 @@
 */
 #include <stdio.h>
 int main() {
-    int score;
+    int score ;
     printf(" put your score:") ;
     scanf("%d",&score) ; 
 
