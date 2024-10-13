@@ -6,9 +6,9 @@ int main() {
     float floatNum;
     char str[100];
 
-   
+    // รับค่า character
     printf("Enter a character: \n");
-    scanf(" %c", &character);  
+    scanf(" %c", &character);  // มีช่องว่างก่อน %c เพื่อข้ามช่องว่างที่ไม่จำเป็น
 
     // รับค่า integers
     printf("Enter two integers: \n");
