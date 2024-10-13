@@ -11,29 +11,34 @@ int isPrime(int num) {
 
 int main() {
     int n;
-    printf("Enter N: ");
+
+
+    printf("Enter N : ");
     scanf("%d", &n);
 
-    int arr[n];
+    int arr[n]; 
     for (int i = 0; i < n; i++) {
-        printf("Enter value[%d]: ", i);
+        printf("Enter value[%d] : ", i);
         scanf("%d", &arr[i]);
-    }
+    }//end for
+
 
     printf("Index:  ");
     for (int i = 0; i < n; i++) {
         printf("%2d ", i);
-    }
+    }//end for
     printf("\n");
+
 
     printf("Array:  ");
     for (int i = 0; i < n; i++) {
-        if (isPrime(arr[i]))
+        if (isPrime(arr[i])) {
             printf("%2d ", arr[i]);
-        else
+        } else {
             printf("%2s ", "#");
-    }
+        }
+    }//end for
     printf("\n");
 
     return 0;
-}
+}//end main
