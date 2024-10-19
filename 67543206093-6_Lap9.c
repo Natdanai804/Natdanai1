@@ -1,51 +1,41 @@
 #include <stdio.h>
-    
-int prime(int a) {
-    if (a <= 1) {
-        return 0 ;
+#include <stdbool.h>
+
+bool isPrime( int N ) {
+    if ( N < 2 ) return false ;
+    for ( int i = 2 ; i * i <= N ; i++ ) {
+        if ( N % i == 0 ) return false ;
     }
-    if (a <= 3) {
-        return 1 ;
-    }
-    if(a > 3) {
-        for(int j = 2 ; j < a ; j++ ) {
-            if (a % j == 0) {
-                return 0 ;
-            } else if (a == a - 1) {
-                return 1 ;
-            }
-        }
-    }
+    return true ; 
 }
 
-int main() { 
-    
-    int n ;
-    
-    printf("Enter N : " ) ;     //รับค่า   n   จากผู้ใช้
-    scanf("%d" , &n ) ;
-    
-    int s[n] ;
-    int i ;
-    for(int i = 0 ; i < n ; i++ ) {
-        printf("Enter value a[%d] :\n " , i ) ; //รับค่า Array
-        scanf("%d" , &s[i] ) ;
-    }//end for value
-    
-    printf("Index : ") ;
-    for(int i = 0 ; i < n ; i++ ) {        //แสดงค่า แถว
-        printf("%d  " , i ) ;
-    }//end for Index
-    printf("\n") ;
-    
-    printf("Array : " ) ;
-    for(int i = 0 ; i < n ; i++ ) {           //แสดงค่า Array
-        if(prime(s[i])) {  //true
-            printf("%d " , s[i] ) ;
-        } else {   //false
-            printf("#  ") ;
+int main()
+{
+    int i , n ;
+
+    printf("Enter N : ");
+    scanf ( "%d" , &n ) ;
+
+    int s[n];
+
+    for ( i = 0 ; i < n ; i++ ) {
+        printf("Enter value[%d] : ", i);
+        scanf("%d", &s[i]);
+    }
+
+    printf("Index:  ");
+    for ( i = 0; i < n; i++ ) {
+        printf("%2d ", i);
+    }
+
+    printf("\nArray:  ");
+    for ( i = 0 ; i < n ; i++ ) {
+        if ( isPrime(s[i]) ) {
+            printf("%2d ", s[i]);
+        } else {
+            printf("%2s ", "#");
         }
-    }//end for Array
-    
-    return 0;
-}//end function
+    }
+    printf ( "\n" ) ;
+    return 0 ;
+}
